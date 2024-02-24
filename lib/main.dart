@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tap_assignment/helpers/colors.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,7 +13,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Tap Invest',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.green),
+        fontFamily: 'Inter',
+        colorScheme: ColorScheme.fromSeed(seedColor: TapColors.greenLight),
         useMaterial3: true,
       ),
       home: null,
