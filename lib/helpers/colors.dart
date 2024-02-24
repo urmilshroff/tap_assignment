@@ -1,9 +1,11 @@
 import 'dart:ui';
 
+// define all colors used across the app here
+
 class TapColors {
   static const backgroundLight = Color(0xffFBFBF6);
   static const textActive = Color(0xff152420);
-  static final textActive40 = textActive.withOpacity(40);
+  static final textActiveOpacity = textActive.withOpacity(0.4);
   static const greenLight = Color(0xff16A34A);
   static const greenDark = Color(0xff15803D);
   static const stoneExtraDark = Color(0xff44403C);
