@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:tap_assignment/helpers/colors.dart';
 import 'package:tap_assignment/helpers/text.dart';
+import 'package:tap_assignment/pages/document_page.dart';
 
 class SuccessPage extends StatelessWidget {
   const SuccessPage({super.key});
@@ -98,9 +99,13 @@ class SuccessPage extends StatelessWidget {
                       ],
                       totalRepeatCount: 1,
                       pause: const Duration(milliseconds: 500),
-                      onFinished: () {
-                        Navigator.pop(context);
-                      },
+                      onFinished: () => Navigator.pushAndRemoveUntil(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const DocumentPage(),
+                        ),
+                        (route) => false,
+                      ),
                     ),
                   ],
                 ),

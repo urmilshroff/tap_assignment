@@ -178,7 +178,8 @@ class PurchasingPage extends StatelessWidget {
                   borderRadius: 6,
                   sliderButtonIconSize: 18,
                   sliderButtonIconPadding: 14,
-                  onSubmit: () {
+                  onSubmit: () async {
+                    await HapticFeedback.mediumImpact();
                     Navigator.push(
                       context,
                       MaterialPageRoute(
