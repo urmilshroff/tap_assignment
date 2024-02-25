@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:slide_to_act/slide_to_act.dart';
 import 'package:tap_assignment/helpers/colors.dart';
 import 'package:tap_assignment/helpers/text.dart';
 import 'package:tap_assignment/widgets/divider.dart';
 
 class PurchasingPage extends StatelessWidget {
+  static final sliderKey = GlobalKey<SlideActionState>();
   const PurchasingPage({super.key});
 
   @override
@@ -135,6 +137,54 @@ class PurchasingPage extends StatelessWidget {
             ),
           ),
         ],
+      ),
+      bottomNavigationBar: Material(
+        elevation: 8,
+        child: SizedBox(
+          height: 117 + MediaQuery.of(context).padding.bottom,
+          child: Padding(
+            padding: EdgeInsets.only(
+              left: 21,
+              right: 21,
+              bottom: MediaQuery.of(context).padding.bottom,
+            ),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                const Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    TapText(
+                      'Balance: ₹1,00,000',
+                      style: TapTextStyles.body,
+                    ),
+                    TapText(
+                      'Required: ₹0',
+                      style: TapTextStyles.body,
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 8),
+                SlideAction(
+                  key: sliderKey,
+                  sliderRotate: false,
+                  height: 54,
+                  elevation: 0,
+                  text: 'swipe to pay'.toUpperCase(),
+                  textStyle: TapTextStyles.title.copyWith(color: Colors.black),
+                  innerColor: TapColors.greenDark,
+                  outerColor: TapColors.stoneExtraLight,
+                  borderRadius: 6,
+                  sliderButtonIconSize: 18,
+                  sliderButtonIconPadding: 14,
+                  onSubmit: () {
+                    return null;
+                  },
+                ),
+              ],
+            ),
+          ),
+        ),
       ),
     );
   }
