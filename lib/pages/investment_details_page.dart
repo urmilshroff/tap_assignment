@@ -246,6 +246,98 @@ class InvestmentDetailsPage extends StatelessWidget {
               ],
             ),
           ),
+          const SizedBox(height: 32),
+          const TapDivider(),
+          const SizedBox(height: 24),
+          const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 21),
+            child: TapText(
+              'Documents',
+              style: TapTextStyles.subTitle,
+            ),
+          ),
+          const SizedBox(height: 16),
+          Container(
+            height: 173,
+            width: 300,
+            decoration: TapBorders.containerBorder,
+            padding: const EdgeInsets.all(16),
+            margin: const EdgeInsets.symmetric(horizontal: 16),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Image.asset('assets/images/document.png', height: 48),
+                const SizedBox(height: 16),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    const SizedBox(
+                      width: 242,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          TapText(
+                            'Invoice Discounting Contract',
+                            style: TapTextStyles.bodyBold,
+                          ),
+                          TapText(
+                            'All the legalese surrounding this deal and how it relates to you.',
+                            style: TapTextStyles.body,
+                            maxLines: 4,
+                          ),
+                        ],
+                      ),
+                    ),
+                    Image.asset('assets/images/download.png', height: 24),
+                  ],
+                ),
+              ],
+            ),
+          ),
+          const SizedBox(height: 16),
+          Container(
+            height: 173,
+            width: 300,
+            decoration: TapBorders.containerBorder,
+            padding: const EdgeInsets.all(16),
+            margin: const EdgeInsets.symmetric(horizontal: 16),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Image.asset('assets/images/deck.png', height: 48),
+                const SizedBox(height: 16),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    const SizedBox(
+                      width: 242,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          TapText(
+                            'Company Pitch Deck',
+                            style: TapTextStyles.bodyBold,
+                          ),
+                          TapText(
+                            'Read more about the company and see how they pitch to investors.',
+                            style: TapTextStyles.body,
+                            maxLines: 4,
+                          ),
+                        ],
+                      ),
+                    ),
+                    Image.asset('assets/images/download.png', height: 24),
+                  ],
+                ),
+              ],
+            ),
+          ),
         ],
       ),
     );
