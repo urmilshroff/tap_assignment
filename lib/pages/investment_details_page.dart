@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:tap_assignment/helpers/borders.dart';
 import 'package:tap_assignment/helpers/colors.dart';
 import 'package:tap_assignment/helpers/text.dart';
+import 'package:tap_assignment/pages/purchasing_page.dart';
 import 'package:tap_assignment/widgets/buttons.dart';
 import 'package:tap_assignment/widgets/divider.dart';
 import 'package:tap_assignment/widgets/table.dart';
@@ -355,10 +356,10 @@ class InvestmentDetailsPage extends StatelessWidget {
               right: 21,
               bottom: MediaQuery.of(context).padding.bottom,
             ),
-            child: const Row(
+            child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Column(
+                const Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -371,7 +372,12 @@ class InvestmentDetailsPage extends StatelessWidget {
                 ),
                 TapPrimaryButton(
                   label: 'Tap to Invest',
-                  onTap: null,
+                  onTap: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => PurchasingPage(),
+                    ),
+                  ),
                 ),
               ],
             ),

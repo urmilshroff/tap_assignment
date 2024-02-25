@@ -82,4 +82,10 @@ class TapTextStyles {
     fontWeight: FontWeight.w500,
     fontSize: 14,
   );
+
+  static const bodyGreen = TextStyle(
+    color: TapColors.greenDark,
+    fontWeight: FontWeight.w500,
+    fontSize: 12,
+  );
 }
