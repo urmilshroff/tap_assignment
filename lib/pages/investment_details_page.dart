@@ -221,10 +221,13 @@ class InvestmentDetailsPage extends StatelessWidget {
               scrollDirection: Axis.horizontal,
               padding: const EdgeInsets.only(left: 21),
               children: const [
-                TapButton(label: 'funding'),
-                TapButton(label: 'traction'),
-                TapButton(label: 'financials', isSelected: true),
-                TapButton(label: 'competition'),
+                TapSelectionButton(label: 'funding'),
+                TapSelectionButton(label: 'traction'),
+                TapSelectionButton(label: 'financials', isSelected: true),
+                TapSelectionButton(label: 'competition'),
+                TapSelectionButton(label: 'example 1'),
+                TapSelectionButton(label: 'example 2'),
+                SizedBox(width: 13),
               ],
             ),
           ),
@@ -338,7 +341,42 @@ class InvestmentDetailsPage extends StatelessWidget {
               ],
             ),
           ),
+          const SizedBox(height: 32),
         ],
+      ),
+      bottomNavigationBar: Material(
+        elevation: 8,
+        child: Container(
+          height: 84 + MediaQuery.of(context).padding.bottom,
+          color: Colors.white,
+          child: Padding(
+            padding: EdgeInsets.only(
+              left: 21,
+              right: 21,
+              bottom: MediaQuery.of(context).padding.bottom,
+            ),
+            child: const Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    TapText(
+                      'FILLED',
+                      style: TapTextStyles.title,
+                    ),
+                    TapText('30%', style: TapTextStyles.subTitle),
+                  ],
+                ),
+                TapPrimaryButton(
+                  label: 'Tap to Invest',
+                  onTap: null,
+                ),
+              ],
+            ),
+          ),
+        ),
       ),
     );
   }

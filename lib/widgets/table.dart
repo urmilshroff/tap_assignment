@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tap_assignment/helpers/borders.dart';
+import 'package:tap_assignment/helpers/colors.dart';
 import 'package:tap_assignment/helpers/text.dart';
 
 // custom table widgets
@@ -17,7 +18,9 @@ class TapTable extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: TapBorders.containerBorder,
+      decoration: TapBorders.containerBorder.copyWith(
+        color: TapColors.stoneExtraLight.withOpacity(0.2),
+      ),
       child: Table(
         border: TapBorders.tableBorder,
         children: [

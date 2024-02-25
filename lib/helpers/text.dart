@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:tap_assignment/helpers/colors.dart';
 
@@ -52,6 +53,12 @@ class TapTextStyles {
     color: TapColors.stoneDark,
     fontWeight: FontWeight.w600,
     fontSize: 10,
+  );
+
+  static const primaryButtonLabel = TextStyle(
+    color: Colors.white,
+    fontWeight: FontWeight.w600,
+    fontSize: 14,
   );
 
   static const subTitle = TextStyle(
