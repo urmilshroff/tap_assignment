@@ -88,4 +88,16 @@ class TapTextStyles {
     fontWeight: FontWeight.w500,
     fontSize: 12,
   );
+
+  static const paymentTitle = TextStyle(
+    color: Colors.white,
+    fontWeight: FontWeight.w600,
+    fontSize: 16,
+  );
+
+  static const paymentBody = TextStyle(
+    color: Colors.white,
+    fontWeight: FontWeight.w400,
+    fontSize: 12,
+  );
 }

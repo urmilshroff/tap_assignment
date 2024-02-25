@@ -8,6 +8,7 @@ class TapColors {
   static final textActiveOpacity = textActive.withOpacity(0.4);
   static const greenLight = Color(0xff16A34A);
   static const greenDark = Color(0xff15803D);
+  static const greenExtraDark = Color(0xff166534);
   static const stoneExtraDark = Color(0xff44403C);
   static const stoneDark = Color(0xff78716C);
   static const stoneLight = Color(0xffD6D3D1);

@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:slide_to_act/slide_to_act.dart';
 import 'package:tap_assignment/helpers/colors.dart';
 import 'package:tap_assignment/helpers/text.dart';
+import 'package:tap_assignment/pages/success_page.dart';
 import 'package:tap_assignment/widgets/divider.dart';
 
 class PurchasingPage extends StatelessWidget {
@@ -178,6 +179,12 @@ class PurchasingPage extends StatelessWidget {
                   sliderButtonIconSize: 18,
                   sliderButtonIconPadding: 14,
                   onSubmit: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const SuccessPage(),
+                      ),
+                    );
                     return null;
                   },
                 ),
