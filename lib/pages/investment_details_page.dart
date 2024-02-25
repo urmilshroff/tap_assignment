@@ -1,4 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:tap_assignment/helpers/borders.dart';
 import 'package:tap_assignment/helpers/colors.dart';
 import 'package:tap_assignment/helpers/text.dart';
@@ -93,6 +95,115 @@ class InvestmentDetailsPage extends StatelessWidget {
           const SizedBox(height: 32),
           const TapDivider(),
           const SizedBox(height: 32),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 21),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const TapText(
+                  'Clients',
+                  style: TapTextStyles.subTitle,
+                ),
+                Row(
+                  children: [
+                    for (int i = 0; i < 3; i++)
+                      Padding(
+                        padding: const EdgeInsets.only(right: 16, top: 8),
+                        child: Image.asset(
+                          'assets/images/google_logo.png',
+                          width: 66,
+                        ),
+                      ),
+                  ],
+                ),
+              ],
+            ),
+          ),
+          const SizedBox(height: 32),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 21),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const TapText(
+                  'Backed by',
+                  style: TapTextStyles.subTitle,
+                ),
+                Row(
+                  children: [
+                    for (int i = 0; i < 3; i++)
+                      Padding(
+                        padding: const EdgeInsets.only(right: 16, top: 8),
+                        child: Image.asset(
+                          'assets/images/google_logo.png',
+                          width: 66,
+                        ),
+                      ),
+                  ],
+                ),
+              ],
+            ),
+          ),
+          const SizedBox(height: 32),
+          const TapDivider(),
+          const SizedBox(height: 32),
+          const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 21),
+            child: TapText(
+              'Highlights',
+              style: TapTextStyles.subTitle,
+            ),
+          ),
+          const SizedBox(height: 16),
+          SizedBox(
+            height: 205,
+            child: ListView(
+              shrinkWrap: true,
+              scrollDirection: Axis.horizontal,
+              children: [
+                Container(
+                  height: 173,
+                  width: 300,
+                  decoration: TapBorders.containerBorder,
+                  padding: const EdgeInsets.all(16),
+                  margin: const EdgeInsets.all(16),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Image.asset('assets/images/bulb.png', height: 35),
+                      const SizedBox(height: 16),
+                      const TapText(
+                        'Agrizy was founded in 2021 by Vicky Dodani and Saket Chirania to provide an end-to-end solution to the agri processing market.',
+                        style: TapTextStyles.body,
+                        maxLines: 4,
+                      ),
+                    ],
+                  ),
+                ),
+                Container(
+                  height: 173,
+                  width: 300,
+                  decoration: TapBorders.containerBorder,
+                  padding: const EdgeInsets.all(16),
+                  margin: const EdgeInsets.all(16),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Image.asset('assets/images/bulb.png', height: 35),
+                      const SizedBox(height: 16),
+                      const TapText(
+                        'Agrizy was founded in 2021 by Vicky Dodani and Saket Chirania to provide an end-to-end solution to the agri processing market.',
+                        style: TapTextStyles.body,
+                        maxLines: 4,
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
         ],
       ),
     );
