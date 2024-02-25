@@ -1,9 +1,8 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:tap_assignment/helpers/borders.dart';
 import 'package:tap_assignment/helpers/colors.dart';
 import 'package:tap_assignment/helpers/text.dart';
+import 'package:tap_assignment/widgets/buttons.dart';
 import 'package:tap_assignment/widgets/divider.dart';
 import 'package:tap_assignment/widgets/table.dart';
 
@@ -94,7 +93,7 @@ class InvestmentDetailsPage extends StatelessWidget {
           ),
           const SizedBox(height: 32),
           const TapDivider(),
-          const SizedBox(height: 32),
+          const SizedBox(height: 24),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 21),
             child: Column(
@@ -146,7 +145,7 @@ class InvestmentDetailsPage extends StatelessWidget {
           ),
           const SizedBox(height: 32),
           const TapDivider(),
-          const SizedBox(height: 32),
+          const SizedBox(height: 24),
           const Padding(
             padding: EdgeInsets.symmetric(horizontal: 21),
             child: TapText(
@@ -154,7 +153,7 @@ class InvestmentDetailsPage extends StatelessWidget {
               style: TapTextStyles.subTitle,
             ),
           ),
-          const SizedBox(height: 16),
+          const SizedBox(height: 8),
           SizedBox(
             height: 205,
             child: ListView(
@@ -201,6 +200,49 @@ class InvestmentDetailsPage extends StatelessWidget {
                     ],
                   ),
                 ),
+              ],
+            ),
+          ),
+          const SizedBox(height: 16),
+          const TapDivider(),
+          const SizedBox(height: 24),
+          const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 21),
+            child: TapText(
+              'Key Metrics',
+              style: TapTextStyles.subTitle,
+            ),
+          ),
+          const SizedBox(height: 16),
+          SizedBox(
+            height: 30,
+            child: ListView(
+              shrinkWrap: true,
+              scrollDirection: Axis.horizontal,
+              padding: const EdgeInsets.only(left: 21),
+              children: const [
+                TapButton(label: 'funding'),
+                TapButton(label: 'traction'),
+                TapButton(label: 'financials', isSelected: true),
+                TapButton(label: 'competition'),
+              ],
+            ),
+          ),
+          const SizedBox(height: 24),
+          const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 21),
+            child: TapTable(
+              titles: [
+                'active deals',
+                'raised',
+                'matured deals',
+                'on time payment',
+              ],
+              subTitles: [
+                '6 of 18',
+                '₹6.94 Cr',
+                '12 of 18',
+                '100 %',
               ],
             ),
           ),
