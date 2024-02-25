@@ -375,7 +375,7 @@ class InvestmentDetailsPage extends StatelessWidget {
                   onTap: () => Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => PurchasingPage(),
+                      builder: (context) => const PurchasingPage(),
                     ),
                   ),
                 ),

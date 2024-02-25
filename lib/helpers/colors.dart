@@ -13,4 +13,5 @@ class TapColors {
   static const stoneDark = Color(0xff78716C);
   static const stoneLight = Color(0xffD6D3D1);
   static const stoneExtraLight = Color(0xffE7E5E4);
+  static const amber = Color(0xffB45309);
 }

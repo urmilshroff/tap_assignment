@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:tap_assignment/helpers/colors.dart';
 
 // custom text widget helper
@@ -97,6 +96,30 @@ class TapTextStyles {
 
   static const paymentBody = TextStyle(
     color: Colors.white,
+    fontWeight: FontWeight.w400,
+    fontSize: 12,
+  );
+
+  static const helper = TextStyle(
+    color: TapColors.stoneDark,
+    fontWeight: FontWeight.w600,
+    fontSize: 12,
+  );
+
+  static const amount = TextStyle(
+    color: TapColors.stoneExtraDark,
+    fontWeight: FontWeight.w600,
+    fontSize: 24,
+  );
+
+  static const hint = TextStyle(
+    color: TapColors.stoneDark,
+    fontWeight: FontWeight.w600,
+    fontSize: 24,
+  );
+
+  static const error = TextStyle(
+    color: TapColors.amber,
     fontWeight: FontWeight.w400,
     fontSize: 12,
   );
