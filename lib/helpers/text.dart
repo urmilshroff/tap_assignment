@@ -66,6 +66,12 @@ class TapTextStyles {
     fontSize: 16,
   );
 
+  static const subTitleSlate = TextStyle(
+    color: TapColors.slate,
+    fontWeight: FontWeight.w500,
+    fontSize: 16,
+  );
+
   static final subTitleOpacity = subTitle.copyWith(
     color: TapColors.textActiveOpacity,
   );
@@ -101,7 +107,7 @@ class TapTextStyles {
   );
 
   static const helper = TextStyle(
-    color: TapColors.stoneDark,
+    color: TapColors.stoneHint,
     fontWeight: FontWeight.w600,
     fontSize: 12,
   );
@@ -113,7 +119,7 @@ class TapTextStyles {
   );
 
   static const hint = TextStyle(
-    color: TapColors.stoneDark,
+    color: TapColors.stoneHint,
     fontWeight: FontWeight.w600,
     fontSize: 24,
   );
