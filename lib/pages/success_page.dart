@@ -5,8 +5,15 @@ import 'package:tap_assignment/helpers/colors.dart';
 import 'package:tap_assignment/helpers/text.dart';
 import 'package:tap_assignment/pages/document_page.dart';
 
-class SuccessPage extends StatelessWidget {
+class SuccessPage extends StatefulWidget {
   const SuccessPage({super.key});
+
+  @override
+  State<SuccessPage> createState() => _SuccessPageState();
+}
+
+class _SuccessPageState extends State<SuccessPage> {
+  bool next = false;
 
   @override
   Widget build(BuildContext context) {
@@ -32,8 +39,10 @@ class SuccessPage extends StatelessWidget {
                       borderRadius: BorderRadius.circular(8),
                     ),
                     child: Padding(
-                      padding: const EdgeInsets.all(24.0),
-                      child: Image.asset('assets/images/check.png'),
+                      padding: const EdgeInsets.all(28.0),
+                      child: next
+                          ? Image.asset(('assets/images/page.png'))
+                          : Image.asset('assets/images/check.png'),
                     ),
                   ),
                 ),
@@ -65,6 +74,7 @@ class SuccessPage extends StatelessWidget {
                       ],
                       totalRepeatCount: 1,
                       pause: const Duration(milliseconds: 500),
+                      onNext: (_, __) => setState(() => next = true),
                     ),
                     const SizedBox(height: 16),
                     AnimatedTextKit(

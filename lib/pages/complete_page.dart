@@ -28,8 +28,8 @@ class CompletePage extends StatelessWidget {
                     borderRadius: BorderRadius.circular(8),
                   ),
                   child: Padding(
-                    padding: const EdgeInsets.all(24.0),
-                    child: Image.asset('assets/images/check.png'),
+                    padding: const EdgeInsets.all(32.0),
+                    child: Image.asset('assets/images/flag.png'),
                   ),
                 ),
               ),
