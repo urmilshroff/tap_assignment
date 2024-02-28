@@ -12,8 +12,60 @@ class SuccessPage extends StatefulWidget {
   State<SuccessPage> createState() => _SuccessPageState();
 }
 
-class _SuccessPageState extends State<SuccessPage> {
+class _SuccessPageState extends State<SuccessPage>
+    with TickerProviderStateMixin {
   bool next = false;
+  late AnimationController maskRotateAnimationController;
+  late AnimationController checkZoomAnimationController;
+  late AnimationController pageZoomAnimationController;
+  late final Animation<double> checkZoomAnimation;
+  late final Animation<double> pageZoomAnimation;
+
+  @override
+  void initState() {
+    maskRotateAnimationController = AnimationController(
+      duration: const Duration(seconds: 5),
+      vsync: this,
+    )..repeat();
+
+    checkZoomAnimationController = AnimationController(
+      duration: const Duration(milliseconds: 2750),
+      vsync: this,
+    )..repeat(reverse: true);
+
+    pageZoomAnimationController = AnimationController(
+      duration: const Duration(milliseconds: 5500),
+      vsync: this,
+    )..repeat();
+
+    checkZoomAnimation = CurvedAnimation(
+      parent: checkZoomAnimationController,
+      curve: const Interval(
+        0.0,
+        0.4,
+        curve: Curves.easeInOut,
+      ),
+    );
+
+    pageZoomAnimation = CurvedAnimation(
+      parent: pageZoomAnimationController,
+      curve: const Interval(
+        0.0,
+        0.2,
+        curve: Curves.easeInOut,
+      ),
+    );
+
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    maskRotateAnimationController.dispose();
+    checkZoomAnimationController.dispose();
+    pageZoomAnimationController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +75,16 @@ class _SuccessPageState extends State<SuccessPage> {
         backgroundColor: TapColors.greenDark,
         body: Stack(
           children: [
-            Lottie.asset('assets/lottie/flow.json'),
+            Image.asset(
+              'assets/images/dots.png',
+              height: MediaQuery.of(context).size.height,
+              width: MediaQuery.of(context).size.width,
+            ),
+            Lottie.asset(
+              'assets/lottie/flow.json',
+              height: MediaQuery.of(context).size.height,
+              width: MediaQuery.of(context).size.width,
+            ),
             Positioned(
               child: Align(
                 alignment: Alignment.topCenter,
@@ -41,8 +102,43 @@ class _SuccessPageState extends State<SuccessPage> {
                     child: Padding(
                       padding: const EdgeInsets.all(28.0),
                       child: next
-                          ? Image.asset(('assets/images/page.png'))
-                          : Image.asset('assets/images/check.png'),
+                          ? ScaleTransition(
+                              scale: pageZoomAnimation,
+                              child: Image.asset(
+                                'assets/images/page.png',
+                                width: 35,
+                                height: 45,
+                              ),
+                            )
+                          : ScaleTransition(
+                              scale: checkZoomAnimation,
+                              child: Align(
+                                alignment: Alignment.center,
+                                child: Stack(
+                                  children: [
+                                    Align(
+                                      alignment: Alignment.center,
+                                      child: RotationTransition(
+                                        turns: maskRotateAnimationController,
+                                        child: Image.asset(
+                                          'assets/images/mask.png',
+                                          width: 48,
+                                          height: 48,
+                                        ),
+                                      ),
+                                    ),
+                                    Align(
+                                      alignment: Alignment.center,
+                                      child: Image.asset(
+                                        'assets/images/tick.png',
+                                        width: 20,
+                                        height: 20,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
                     ),
                   ),
                 ),

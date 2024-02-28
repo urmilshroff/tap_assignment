@@ -12,7 +12,16 @@ class CompletePage extends StatelessWidget {
       backgroundColor: TapColors.greenDark,
       body: Stack(
         children: [
-          Lottie.asset('assets/lottie/flow.json'),
+          Image.asset(
+            'assets/images/dots.png',
+            height: MediaQuery.of(context).size.height,
+            width: MediaQuery.of(context).size.width,
+          ),
+          Lottie.asset(
+            'assets/lottie/flow.json',
+            height: MediaQuery.of(context).size.height,
+            width: MediaQuery.of(context).size.width,
+          ),
           Positioned(
             child: Align(
               alignment: Alignment.topCenter,
@@ -29,7 +38,11 @@ class CompletePage extends StatelessWidget {
                   ),
                   child: Padding(
                     padding: const EdgeInsets.all(32.0),
-                    child: Image.asset('assets/images/flag.png'),
+                    child: Image.asset(
+                      'assets/images/flag.png',
+                      width: 36,
+                      height: 40,
+                    ),
                   ),
                 ),
               ),
